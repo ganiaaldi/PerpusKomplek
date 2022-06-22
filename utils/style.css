@@ -62,7 +62,7 @@ form textarea {
     flex-direction: column;
 }
 
-.button {
+button {
     background-color: #FF7800;
     border: none;
     font-family: 'Open Sans';
@@ -75,4 +75,56 @@ form textarea {
     font-size: 16px;
     cursor: pointer;
     border-radius: 20px;
+    margin: 5px 0px;
+  }
+
+  .delete {
+    width: 200px;
+    background-color: rgb(247, 106, 106);
+  }
+
+  .okay {
+    width: 200px;
+    background-color: rgb(114, 214, 179);
+  }
+
+  #content{
+    display: flex;
+    flex-direction: row;
+  }
+
+  #content div{
+    flex: 50%;
+  padding: 10px;
+  }
+
+  #content form {
+    padding: 20px;
+    background-color: #ffe4d5;
+    border-radius: 30px;
+    flex-direction: column;
+    display: flex;
+  }
+
+  #content h2 {
+    color:#615050
+  }
+
+  .bookList{
+    margin: 30px 0px;
+    padding: 30px;
+    background-color: #ffe4d5;
+    border-radius: 30px;
+    flex-direction: column;
+    display: flex;
+    height: 200px;
+    overflow: auto;
+  }
+
+  .bookItem {
+    background-color: #fff4ed9c;
+    padding: 20px;
+    margin: 10px 0px;
+    flex-direction: row;
+    display: flex;
   }
