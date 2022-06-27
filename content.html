@@ -19,26 +19,26 @@
 <main id="content">
   <div>
   <section class="input_section">
-    <form>
-      <h2>Masukkan Buku Baru</h2>
+    <form id="formAddBook">
+      <h2>Tambah buku baru</h2>
         <input type="text" placeholder="Judul Buku" id="tittleBook" required>
         <input type="text" placeholder="Penulis" id="authorBook" required>
-        <input type="text" placeholder="Tahun terbit" id="yearBook" required>
-        <div class="input_check">
-          <input id="inputBookIsComplete" type="checkbox">
-          <label for="inputBookIsComplete">Selesai dibaca</label>
+        <input type="number" placeholder="Tahun terbit" id="yearBook" required>
+        <div class="inputCheck">
+          <input id="checkBook" type="checkbox">
+          <label>Selesai dibaca</label>
         </div>
-        <button class="button" onclick="validateFormLogin();" type="submit" id="buttonAdd">Tambah buku</button>
+        <button class="button" type="submit" id="buttonAdd">Tambah buku</button>
       </form>
   </section>
 </div>
 
 <div>
   <section class="search_section">
-    <form id="searchBook">
+    <form id="searchBook" onSubmit="return false;">
       <h2>Cari Buku</h2>
-      <input type="text" placeholder="Judul Buku" id="tittleBook">
-      <button class="button" onclick="validateFormLogin();" type="submit" id="buttonSearch">Cari</button>
+      <input type="text" placeholder="Judul Buku" id="query" onkeypress="enterSearch(event)">
+      <button class="button" onclick="searchingBook()" type="button" id="buttonSearch">Cari</button>
     </form>
   </section>
 
@@ -46,15 +46,7 @@
     <div class="bookList">
     <h2>Belum selesai dibaca</h2>
     <article class="bookItem">
-      <div>
-      <h3>Book Title</h3>
-      <p>Penulis: John Doe</p>
-      <p>Tahun: 2002</p>
-    </div>
-      <div class="buttonList">
-        <button class="okay">Selesai dibaca</button>
-        <button class="delete">Hapus buku</button>
-      </div>
+      <div class="item-list" id="unfinished"></div>
    </article>
     </div>
   </section>
@@ -63,22 +55,13 @@
     <div class="bookList">
       <h2>Selesai dibaca</h2>
       <article class="bookItem">
-        <div>
-        <h3>Book Title</h3>
-        <p>Penulis: John Doe</p>
-        <p>Tahun: 2002</p>
-      </div>
-        <div class="buttonList">
-          <button class="okay">Selesai dibaca</button>
-          <button class="delete">Hapus buku</button>
-        </div>
+        <div class="item-list" id="finished"></div>
      </article>
     </div>
   </section>
 </div>
 </main>
-
-<script src="main.js"></script>
+<script src="utils/script.js"></script>
 
 </body>
 </html>
