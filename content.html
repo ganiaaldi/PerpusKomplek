@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Perpus Komplek</title>
   <link rel="stylesheet" href="utils/style.css">
+  <link rel="stylesheet" href="utils/modalStyles.css">
 </head>
 
 <body>
@@ -59,6 +60,20 @@
      </article>
     </div>
   </section>
+</div>
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content">
+    <div class="container">
+      <h1>Delete Book</h1>
+      <p>Are you sure you want to delete your account?</p>
+
+      <div class="clearfix">
+        <button type="button" class="okay" onclick="document.getElementById('id01').style.display='none'">Cancel</button>
+        <button type="button" class="delete" id="deleteBook">Delete</button>
+      </div>
+    </div>
+  </form>
 </div>
 </main>
 <script src="utils/script.js"></script>

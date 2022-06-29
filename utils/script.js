@@ -73,6 +73,8 @@ function saveData() {
     }
 }
 
+
+
 function createBook(bookObject) {
     const textTitle = document.createElement('h3');
     textTitle.classList.add('book-title');
@@ -82,10 +84,10 @@ function createBook(bookObject) {
     bookInformation.classList.add('book-information');
 
     const textAuthor = document.createElement('span').innerText = 'Penulis: ' + bookObject.author;
-    const divider = document.createElement('span').innerText = ' | ';
+    const breakLine = document.createElement('br');
     const textYear = document.createElement('span').innerText = 'Tahun: ' + bookObject.year;
 
-    bookInformation.append(textAuthor, divider, textYear);
+    bookInformation.append(textAuthor, breakLine, textYear);
     
     const container = document.createElement('div');
     container.classList.add('item');
@@ -100,6 +102,7 @@ function createBook(bookObject) {
     
     deleteBtn.addEventListener('click', function () {
         confirmDelete(bookObject);
+        // modalDelete(bookObject);
     });
 
     container.append(containerAction);
@@ -170,14 +173,15 @@ function deleteBook(bookId) {
     books.splice(bookTarget, 1);
     document.dispatchEvent(new Event(RENDER_EVENT));
     saveData();
+    window.location.reload()
 }
 
 function confirmDelete(book) {
-    let text = `Apakah anda akan menghapus buku ${book.title}?`;
-  if (confirm(text) == true) {
-    deleteBook(book.id);
-  } else {
-  }
+    document.getElementById('id01').style.display='block'
+    document.getElementById("deleteBook").onclick = function() {
+        deleteBook(book.id)
+        document.getElementById('id01').style.display='none'
+    };
 }
 
 document.addEventListener('DOMContentLoaded', function () {
